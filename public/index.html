@@ -1,0 +1,105 @@
+<!-- Very Useful Tutorial on Serial Communication w/ NodeJS: https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-communication-with-node-js/-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+
+            Light-Clicker
+
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.8/p5.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.8/addons/p5.dom.js"></script>
+        <script type="text/javascript">
+
+            var text;       //  Variable for text div
+            var socket = new WebSocket("ws://192.168.0.191:8081");  // Set to the IP and Port of the WebSocket Server; don't use localhost:8081, since this code is running on the /client side/
+
+            function setup(){
+
+                createCanvas(400, 400);
+
+                //  The socket connection needs two event listeners:
+                socket.onopen = openSocket;
+                socket.onmessage = showData;                
+
+                //  Make a new div and position it
+                text = createDiv("Sensor Reading: ");
+                text.position(10, 10);
+
+            }
+            
+            function openSocket(){
+                text.html("Socket Open");
+                socket.send("Hello server");
+                socket.send("1");
+            }
+
+            /*  //Part of a separate tutorial
+            function showData(result) {
+                // Whenever there's new data from the server, show the result in the div:
+                text.html("Sensor reading: " + result.data);
+                xPos = int(result.data);    //  Convert result to an integer
+                text.position(xPos, 10);    //  Position the text
+            }*/
+
+            function draw() {
+            }
+
+            function sendButtonClick(buttonID){
+                console.log("Sending: " + buttonID);
+                socket.send(buttonID);  //  Send either 1, 2, or 3 to the webSocket server
+            }
+
+        </script>
+
+        <style>
+
+            body {
+                background-color: rgba(101, 69, 151, 1);
+
+                overflow: hidden; /* Hide scrollbars */
+            }
+
+            .bigButton {
+                cursor: 'pointer';
+
+                width: 98vw;
+                height: 30vh;
+                line-height: 30vh;
+
+                margin: auto;
+                margin-bottom: 3vh;
+                
+                background-color: rgba(171, 129, 205, 1);
+                border-radius: 5vh;
+                box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+       
+                text-align: center;
+                font-size: 8vw;
+                font-family: Blippo, fantasy;
+                font-weight: 900;
+                color: rgba(34, 42, 104, 1);
+
+            }
+
+        </style>
+    </head>
+    <body ondblclick="sendButtonClick('123')">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div class="bigButton" onclick="sendButtonClick('1')">Button 1</div>
+        <div class="bigButton" onclick="sendButtonClick('2')">Button 2</div>
+        <div class="bigButton" onclick="sendButtonClick('3')">Button 3</div>
+    </body>
+</html>
