@@ -65,7 +65,7 @@ Hope this helps!
 
 ---
 ![Arduino Setup; Pins hooked up to Resistors hooked up to Buttons](https://github.com/Itimoto/NodeJS-Light-Switch/blob/master/Misc.%20Files/PhysicalComponent.jpg)
->*Arduino Setup. A bit hard to see, but it still works*
+>*Arduino Setup. A bit hard to see, but it still works. (Left - Gutted Remote) (Top - Masking-Taped Wires; not soldered on the off-chance that it might be used again someday)*
 
 ## What About Getting Physical?
 
