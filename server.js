@@ -10,7 +10,7 @@ function runScript(scriptPath, callback) {
     var invoked = false;
     var process = childProcess.fork(scriptPath);
 
-    // Listen for errors as they may prevent exit event from firign
+    // Listen for errors as they may prevent exit event from firing
     process.on('error', function (err) {
         if (invoked) return;
         invoked = true;
