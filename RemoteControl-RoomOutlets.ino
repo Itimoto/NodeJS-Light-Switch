@@ -20,16 +20,13 @@ void loop(){
   digitalWrite(pinTwo, HIGH);
   digitalWrite(pinThree, HIGH);
 
-  if(Serial.available() > 0){
-    currentCommand = Serial.read();
+  if(Serial.available() > 0){         //  When there's Serial data available...
+    currentCommand = Serial.read();   //    Store it in currentCommand.
 
-//    Serial.print("Recieved: ");
-//    Serial.println(currentCommand, DEC);
-
-    if(currentCommand == 49){ //"1", serially
+    if(currentCommand == 49){ //  49 = "1", serially; 50 = "2", etc.
       Serial.print("\tSwitching 1...");
       digitalWrite(pinOne, LOW);
-      delay(500);                     //Button needs time to 'charge' up
+      delay(500);                     // Each Button needs time to 'charge' up
       Serial.println("\tDone.");
       
     } else if (currentCommand == 50){
@@ -48,7 +45,5 @@ void loop(){
       Serial.println("Invalid Response.");
     }
   
-  }
-  
-  
+  }  
 }
