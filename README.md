@@ -67,9 +67,6 @@ Hope this helps!
 
 The Remote has buttons. Each button can be manipulated.
 
-Through careful experimentation, I found that if you 'sink' (take down to *ground*) one side of the button, the button would 'turn on' In turn, if you hook up each button to an IO pin held normally-HIGH (with a 220 ohm resistor for circuit protection), you can toggle the button by taking the pin LOW for a short duration before taking it back HIGH again.
+Through careful experimentation, I found that if you sink (take down to *ground*) one side of the button, the button would turn on. In turn, if you hook up each button to an IO pin held normally-HIGH (with a 220 ohm resistor for circuit protection), you can toggle the button by taking the pin LOW for a short duration before taking it back HIGH again.
 
-The only reason why we keep the pin LOW for longer than a few ms is because, well, it seems that it takes a few tries before each remote Power Socket 'receives' the remote's signal.
-
-
-
+The only reason why we keep the pin LOW for longer than a few ms is because, well, it seems that it takes a few tries before each remote Power Socket receives the remote's signal.
