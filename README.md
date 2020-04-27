@@ -31,7 +31,7 @@ I won't be the first to admit that this isn't *all* my work. Much of this code h
 
 I'm a bit of a script-kiddie in this case, and I'm not proud of it. I didn't know what I didn't know, and I needed a quick and tutorialized way of figuring out how Sockets and Node Syntax and the lot worked. Which brings us to, well:
 
-## How's It Work?
+## How's It Work (Serverwise)?
 I'll assume that you know as much as I did:
 > Servers are Computers. They can run an HTML page with fancy CSS, and Javascript's all over the place to make it nice and interactive.
 
@@ -63,8 +63,13 @@ At any rate, that's a high-level view of the core components of the system. For 
 
 Hope this helps!
 
+## What About Getting Physical?
 
+The Remote has buttons. Each button can be manipulated.
 
+Through careful experimentation, I found that if you 'sink' (take down to *ground*) one side of the button, the button would 'turn on' In turn, if you hook up each button to an IO pin held normally-HIGH (with a 220 ohm resistor for circuit protection), you can toggle the button by taking the pin LOW for a short duration before taking it back HIGH again.
+
+The only reason why we keep the pin LOW for longer than a few ms is because, well, it seems that it takes a few tries before each remote Power Socket 'receives' the remote's signal.
 
 
 
