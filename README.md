@@ -63,6 +63,10 @@ At any rate, that's a high-level view of the core components of the system. For 
 
 Hope this helps!
 
+---
+![Arduino Setup; Pins hooked up to Resistors hooked up to Buttons](https://github.com/Itimoto/NodeJS-Light-Switch/blob/master/Misc.%20Files/PhysicalComponent.jpg)
+>*Arduino Setup. A bit hard to see, but it still works*
+
 ## What About Getting Physical?
 
 The Remote has buttons. Each button can be manipulated.
