@@ -26,6 +26,8 @@ I've had a set of remote-controlled power sockets for a while (similar to [this]
 
 At the same time, I wanted to learn a bit about networking and passing along interactions online; this felt like a good time to try it out.
 
+This *is* my very first IoT project. *And* my first interactive 'website'/server that can change states. *And* my first server where multpile clients can do the same things at the same time. *And* the first time that I've controlled an Arduino from a browser.
+
 ## Credit Given Where Credit is Due
 I won't be the first to admit that this isn't *all* my work. Much of this code has been hobbled together from different online tutorials, ranging from [Node.js scripts interacting with Serial devices](https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-communication-with-node-js/) to setting up and [running an Express Server](https://gist.github.com/aerrity/fd393e5511106420fba0c9602cc05d35) to [an old StackOverflow question](https://stackoverflow.com/questions/22646996/how-do-i-run-a-node-js-script-from-within-another-node-js-script) that I used for running the Serial-Interacting script (*index.js*) from within the Server script.
 
