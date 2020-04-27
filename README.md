@@ -1,5 +1,5 @@
 # Node.js Light Switch
-Turn an arduino-powered remote-controlled light switch on/off through a wonderful LAN server
+Toggling an Arduino-powered Remote-Controlled Light Switch on/off through a wonderful LAN server
 
 ## If You Sorta Know What You're Doing:
 1. Prepare your Arduino
